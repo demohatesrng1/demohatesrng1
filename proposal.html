@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>A little question… 💌</title>
+<title>ねえ、ちょっと聞いてもいい？💌</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%92%96%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -223,36 +223,36 @@
 </head>
 <body>
 
-  <a class="home-link" href="index.html">← Back to site</a>
+  <a class="home-link" href="index.html">← サイトに戻る</a>
 
   <div class="sky" id="sky" aria-hidden="true"></div>
 
   <main class="card" id="nameCard">
     <div class="bigheart">💌</div>
-    <h1 class="q">Hi !</h1>
-    <p class="sub">before we start… what should I call you? 🥰</p>
+    <h1 class="q">やっほー！</h1>
+    <p class="sub">始める前に…なんて呼んだらいい？🥰</p>
 
-    <input id="nameInput" type="text" maxlength="40" placeholder="type your name…"
+    <input id="nameInput" type="text" maxlength="40" placeholder="名前を入れてね…"
            autocomplete="off" autocapitalize="words" />
 
     <div class="btns">
-      <button id="goBtn" type="button" disabled>Let's play 💌</button>
+      <button id="goBtn" type="button" disabled>はじめる 💌</button>
     </div>
 
-    <p class="hint">psst — a little something is waiting for you 😏</p>
+    <p class="hint">ヒント：ちょっとしたサプライズが待ってるよ😏</p>
   </main>
 
   <main class="card" id="proposalCard" hidden>
     <div class="bigheart">💖</div>
-    <h1 class="q">あなたのことが好きです。デートしてくれませんか？</h1>
-    <p class="sub" id="subLine">正直に言って... 🥺👉👈</p>
+    <h1 class="q">ずっと好きでした。デートしてくれませんか？</h1>
+    <p class="sub" id="subLine">正直に答えてね… 🥺👉👈</p>
 
     <div class="btns" id="btns">
-      <button id="yes" type="button">Yes 💘</button>
+      <button id="yes" type="button">はい 💘</button>
       <button id="no" type="button">いいえ</button>
     </div>
 
-    <p class="hint">こっそり〜「いいえ」ボタンはちょっと恥ずかしがり屋さん😏</p>
+    <p class="hint">ヒント：「いいえ」ボタンはちょっと恥ずかしがり屋さんみたい😏</p>
   </main>
 
 <script>
@@ -429,7 +429,7 @@
     notifyYes(guestName);
     try{ sessionStorage.setItem('proposalName', guestName); }catch(e){}
     heartBurst();
-    yes.textContent = 'YAY! 💞';
+    yes.textContent = 'やった〜！💞';
     setTimeout(()=>{ window.location.href = 'yay.html'; }, 1100);
   });
 
@@ -469,7 +469,7 @@
     function start(){
       guestName = nameInput.value.trim();
       if(!guestName) return;
-      subLine.textContent = guestName + ', 正直に言って...🥺👉👈';
+      subLine.textContent = guestName + '、正直に答えてね…🥺👉👈';
       nameCard.hidden = true;
       proposalCard.hidden = false;
       gameActive = true;

@@ -3,97 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dhruv (ドルブ) — Master's student in Computer Science & Communications Engineering at Waseda University, Tokyo. Working in machine learning, deep learning, LLMs, RAG, and computer vision." />
-  <meta name="theme-color" content="#e9e5de" />
-  <title>Dhruv ドルブ — Computer Science & Machine Learning</title>
+  <meta name="description" content="Dhruv Dabas (ドルブ) — M.S. Computer Science student at Waseda University, Tokyo. On-device AI, neural video compression, deep learning, LLMs and computer vision." />
+  <meta name="theme-color" content="#0a0a0c" />
+  <title>Dhruv Dabas ドルブ — Machine Learning Engineer</title>
 
   <!-- inline favicon: rotated diamond -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect x='9' y='9' width='14' height='14' transform='rotate(45 16 16)' fill='%231a1813'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect x='9' y='9' width='14' height='14' transform='rotate(45 16 16)' fill='%23c6f24e'/%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
   <script>document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-  <!-- paper grain texture -->
-  <div class="grain" aria-hidden="true"></div>
+  <!-- fixed background: grid + accent bloom -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
 
-  <!-- ============================ NAV (preserved floating pill) ============================ -->
+  <!-- ============================ NAV ============================ -->
   <nav class="nav" id="nav">
-    <a href="#home" class="nav-logo">
-      <span class="logo-mark">◆</span>
-      <span class="logo-text">Dhruv</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="proposal.html" target="_blank" rel="noopener" style="color:#ff2d6a;font-weight:700;" title="a little surprise 💌">♡</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta">
-      <span>Let's talk</span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-    </a>
-    <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span><span></span>
-    </button>
+    <div class="wrap nav-inner">
+      <a href="#home" class="nav-logo">
+        <span class="logo-mark">◆</span>
+        <span class="logo-text">Dhruv</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Focus</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="proposal.html" target="_blank" rel="noopener" class="nav-heart" title="a little surprise 💌" aria-label="A little surprise">♡</a>
+        <a href="#contact" class="nav-cta">
+          <span>Let's talk</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
   </nav>
 
   <!-- mobile menu overlay -->
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <ul>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#research">Research</a></li>
+      <li><a href="#research">Focus</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="proposal.html" target="_blank" rel="noopener" style="color:#ff2d6a;font-weight:700;">♡ A little surprise 💌</a></li>
+      <li><a href="proposal.html" target="_blank" rel="noopener" class="mm-heart">♡ A little surprise 💌</a></li>
       <li><a href="#contact" class="mm-cta">Let's talk</a></li>
     </ul>
   </div>
 
   <!-- ============================ HERO ============================ -->
   <header class="hero" id="home">
-    <div class="hero-card">
+    <div class="wrap hero-inner">
+      <p class="hero-eyebrow" data-rise style="--d:.05s">
+        <span class="dot" aria-hidden="true"></span>
+        Dhruv Dabas <span class="kana" lang="ja">ドルブ</span>
+        <span class="sep" aria-hidden="true">/</span>
+        Open to internships &amp; research
+      </p>
 
-      <div class="hero-top" data-rise style="--d:.05s">
-        <div class="hero-contact">
-        </div>
-        <nav class="hero-social" aria-label="Social profiles">
-          <a href="https://github.com/demo-hates-rng" target="_blank" rel="noopener noreferrer">GitHub</a><span aria-hidden="true">/</span><a href="#" target="_blank" rel="noopener noreferrer">Read.cv</a>
-        </nav>
+      <h1 class="hero-h" data-rise style="--d:.13s">
+        Machine learning<br class="br-lg" />
+        that runs <em>on the<br class="br-lg" />
+        metal</em>.
+      </h1>
+
+      <p class="hero-sub" data-rise style="--d:.22s">
+        M.S. student in Computer Science at Waseda University, Tokyo. I build
+        systems where the model is only half the problem — on-device speech and
+        LLM inference, neural video codecs, and the C++/CUDA plumbing that makes
+        them fast enough to actually use.
+      </p>
+
+      <div class="hero-actions" data-rise style="--d:.3s">
+        <a class="btn btn-accent" href="#projects">
+          View work
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
       </div>
 
-      <div class="hero-center">
-        <div class="hero-id" data-rise style="--d:.13s">
-          <span class="avatar" aria-hidden="true">D</span>
+      <dl class="hero-stats" data-rise style="--d:.38s">
+        <div class="stat">
+          <dt>Focus</dt>
+          <dd>On-device ML</dd>
         </div>
-
-        <p class="hero-name" data-rise style="--d:.2s">Dhruv <span class="kana" lang="ja">ドルブ（デモ）</span></p>
-
-        <h1 class="hero-h" data-rise style="--d:.27s">
-          Building software,<br/>
-          interfaces &amp; <em>experiences.</em>
-        </h1>
-
-        <p class="hero-sub" data-rise style="--d:.36s">
-          Master's student in Computer Science &amp; Communications Engineering at
-          Waseda University, Tokyo. I build with machine learning, deep learning,
-          and large language models.
-        </p>
-
-        <div class="hero-actions" data-rise style="--d:.44s">
-          <a class="btn btn-dark" href="#projects">
-            View work
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-          </a>
-          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        <div class="stat">
+          <dt>Based in</dt>
+          <dd>Tokyo, Japan</dd>
         </div>
-      </div>
+        <div class="stat">
+          <dt>Now</dt>
+          <dd>Waseda University</dd>
+        </div>
+        <div class="stat">
+          <dt>Languages</dt>
+          <dd>EN · JA · ZH</dd>
+        </div>
+      </dl>
     </div>
   </header>
 
@@ -101,91 +117,118 @@
   <section class="section" id="projects">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow reveal"><span class="ix">01</span> — Projects</p>
-        <h2 class="section-h reveal">Selected work.</h2>
+        <p class="eyebrow reveal"><span class="ix">01</span> Projects</p>
+        <h2 class="section-h reveal">Things I've <em>built</em>.</h2>
+        <p class="section-sub reveal">Two systems projects, both measured rather than described.</p>
       </div>
 
-      <div class="features">
+      <div class="projects">
 
-        <a href="#" class="feature reveal">
-          <div class="feature-text">
-            <p class="feature-eyebrow">Aurora Notes &nbsp;·&nbsp; 2025</p>
-            <h3 class="feature-h">A quiet notebook for thinking out loud.</h3>
-            <p class="feature-desc">A markdown-first writing tool with calm typography, native shortcuts, and offline-first storage designed to be easy on the eyes.</p>
-            <div class="feature-meta">
-              <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">IndexedDB</span>
+        <article class="project reveal">
+          <span class="project-idx" aria-hidden="true">01</span>
+          <div class="project-main">
+            <div class="project-topline">
+              <h3 class="project-h">Mimi</h3>
+              <p class="project-stack">On-device Japanese AI voice assistant · C++/Qt6 · macOS</p>
             </div>
-            <div class="feature-links">
-              <span class="ink-link">Live <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-              <span class="ink-link">Source <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+
+            <p class="project-desc">
+              A fully on-device Japanese voice assistant for macOS, ported from a Python
+              prototype to ~17.6K lines of C++/Qt6 so Whisper inference could run on the
+              Metal GPU — 13–15× realtime transcription with speech recognition, the LLM,
+              and synthesis all running locally. Zero cloud dependency.
+            </p>
+            <p class="project-desc">
+              The always-listening path is a lock-free 30-second ring buffer fed straight
+              from the CoreAudio realtime thread, with voice-activity detection, wake-word
+              spotting, and transcription running in parallel — no dead-air windows, no lock
+              contention mid-conversation.
+            </p>
+
+            <div class="metrics">
+              <div class="metric"><span class="metric-v">~17.6K</span><span class="metric-k">Lines of C++</span></div>
+              <div class="metric"><span class="metric-v">13–15×</span><span class="metric-k">Realtime STT</span></div>
+              <div class="metric"><span class="metric-v">30s</span><span class="metric-k">Lock-free buffer</span></div>
+              <div class="metric"><span class="metric-v">0</span><span class="metric-k">Cloud calls</span></div>
+            </div>
+
+            <div class="project-tags">
+              <span class="tag">C++</span><span class="tag">Qt6</span><span class="tag">Whisper</span>
+              <span class="tag">Metal</span><span class="tag">CoreAudio</span><span class="tag">LLMs</span>
             </div>
           </div>
-          <span class="feature-num" aria-hidden="true">01</span>
-        </a>
+        </article>
 
-        <a href="#" class="feature reveal">
-          <div class="feature-text">
-            <p class="feature-eyebrow">Pulse &nbsp;·&nbsp; 2025</p>
-            <h3 class="feature-h">Real-time analytics that feel calm, not chaotic.</h3>
-            <p class="feature-desc">A streaming dashboard that surfaces signal in a sea of live data — clear hierarchy, smooth transitions, no overwhelm.</p>
-            <div class="feature-meta">
-              <span class="tag">Next.js</span><span class="tag">WebSockets</span><span class="tag">D3</span>
+        <article class="project reveal">
+          <span class="project-idx" aria-hidden="true">02</span>
+          <div class="project-main">
+            <div class="project-topline">
+              <h3 class="project-h">Neural Video Compression Pipeline</h3>
+              <p class="project-stack">DCVC-RT + YOLOv8 · CUDA · PyTorch</p>
             </div>
-            <div class="feature-links">
-              <span class="ink-link">Live <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-              <span class="ink-link">Case study <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+
+            <p class="project-desc">
+              Deployed and benchmarked DCVC-RT — a CVPR 2025 real-time neural video codec —
+              on a CUDA GPU server, building the custom C++/CUDA extensions and evaluating
+              rate–distortion performance across four quantization levels on 4K and
+              lower-resolution video.
+            </p>
+            <p class="project-desc">
+              Then extended the evaluation pipeline in Python/PyTorch to run YOLOv8
+              multi-object tracking over the decoded frames, producing per-frame tracking
+              data and annotated video — quantifying how far you can compress before
+              downstream computer vision starts to break.
+            </p>
+
+            <div class="metrics">
+              <div class="metric"><span class="metric-v">38–53 dB</span><span class="metric-k">PSNR</span></div>
+              <div class="metric"><span class="metric-v">0.0008–0.011</span><span class="metric-k">bpp</span></div>
+              <div class="metric"><span class="metric-v">4</span><span class="metric-k">Quantization levels</span></div>
+              <div class="metric"><span class="metric-v">4K</span><span class="metric-k">Max resolution</span></div>
+            </div>
+
+            <div class="project-tags">
+              <span class="tag">CUDA</span><span class="tag">C++</span><span class="tag">PyTorch</span>
+              <span class="tag">YOLOv8</span><span class="tag">Video Codecs</span>
             </div>
           </div>
-          <span class="feature-num" aria-hidden="true">02</span>
-        </a>
-
-        <a href="#" class="feature feature-dark reveal">
-          <div class="feature-text">
-            <p class="feature-eyebrow">Loop Studio &nbsp;·&nbsp; 2024</p>
-            <h3 class="feature-h">A browser-based loop sequencer, built from scratch.</h3>
-            <p class="feature-desc">A small surface area with a large possibility space. Web Audio, Canvas, and a lot of patience for the timing.</p>
-            <div class="feature-meta">
-              <span class="tag">Web Audio</span><span class="tag">Canvas</span><span class="tag">TypeScript</span>
-            </div>
-            <div class="feature-links">
-              <span class="ink-link">Try it <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-              <span class="ink-link">Source <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-            </div>
-          </div>
-          <span class="feature-num" aria-hidden="true">03</span>
-        </a>
+        </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ============================ RESEARCH ============================ -->
+  <!-- ============================ FOCUS ============================ -->
   <section class="section alt" id="research">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow reveal"><span class="ix">02</span> — Research</p>
-        <h2 class="section-h reveal">Research interests.</h2>
+        <p class="eyebrow reveal"><span class="ix">02</span> Focus</p>
+        <h2 class="section-h reveal">What I'm working <em>toward</em>.</h2>
       </div>
 
       <div class="r-grid">
         <article class="r-card reveal">
-          <span class="r-tag">RG—01</span>
-          <h3>Machine Learning &amp; Deep Learning</h3>
+          <span class="r-tag">FA—01</span>
+          <h3>On-Device &amp; Efficient Inference</h3>
+          <p>Getting large models onto local hardware — quantization, GPU kernels, and low-latency audio and video pipelines.</p>
           <span class="r-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         </article>
         <article class="r-card reveal">
-          <span class="r-tag">RG—02</span>
+          <span class="r-tag">FA—02</span>
           <h3>Computer Vision</h3>
+          <p>Detection, tracking, and representation learning — and how much perception survives lossy neural compression.</p>
           <span class="r-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         </article>
         <article class="r-card reveal">
-          <span class="r-tag">RG—03</span>
+          <span class="r-tag">FA—03</span>
           <h3>Large Language Models</h3>
+          <p>Fine-tuning, auto-encoders, and building interfaces on top of foundation models that hold up outside a demo.</p>
           <span class="r-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         </article>
         <article class="r-card reveal">
-          <span class="r-tag">RG—04</span>
+          <span class="r-tag">FA—04</span>
           <h3>Retrieval-Augmented Generation</h3>
+          <p>Grounding generation in real knowledge — retrieval, ranking, and synthesis that stays faithful to its sources.</p>
           <span class="r-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         </article>
       </div>
@@ -196,26 +239,26 @@
   <section class="section" id="education">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow reveal"><span class="ix">03</span> — Education</p>
-        <h2 class="section-h reveal">Where I've studied.</h2>
+        <p class="eyebrow reveal"><span class="ix">03</span> Education</p>
+        <h2 class="section-h reveal">Where I've <em>studied</em>.</h2>
       </div>
 
       <div class="edu">
         <div class="edu-row reveal">
-          <span class="edu-y">2026 — 2028</span>
+          <span class="edu-y">Apr 2026 — Apr 2028</span>
           <div class="edu-c">
-            <h3>Master's, Computer Science &amp; Communications Engineering</h3>
+            <h3>M.S., Computer Science</h3>
             <p>Waseda University &nbsp;·&nbsp; Tokyo, Japan</p>
             <p class="edu-focus">Graduate School of Fundamental Science &amp; Engineering</p>
           </div>
-          <span class="edu-tag is-now">Current</span>
+          <span class="edu-tag is-now">Incoming</span>
         </div>
         <div class="edu-row reveal">
-          <span class="edu-y">2022 — 2025</span>
+          <span class="edu-y">Jun 2022 — Jun 2025</span>
           <div class="edu-c">
             <h3>B.Sc. (Hons.), Computer Science</h3>
-            <p>Deen Dayal Upadhyaya College (DDUC)</p>
-            <p class="edu-focus">University of Delhi &nbsp;·&nbsp; New Delhi, India</p>
+            <p>University of Delhi &nbsp;·&nbsp; New Delhi, India</p>
+            <p class="edu-focus">Deen Dayal Upadhyaya College</p>
           </div>
           <span class="edu-tag">Undergraduate</span>
         </div>
@@ -226,51 +269,43 @@
   <!-- ============================ SKILLS ============================ -->
   <section class="section alt" id="skills">
     <div class="wrap">
-      <div class="section-head center">
-        <span class="pill-label reveal">Skills</span>
-        <h2 class="section-h reveal">What I work with.</h2>
+      <div class="section-head">
+        <p class="eyebrow reveal"><span class="ix">04</span> Skills</p>
+        <h2 class="section-h reveal">What I work <em>with</em>.</h2>
       </div>
 
-      <div class="skills-grid">
-        <article class="skill reveal">
-          <span class="skill-ic" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 6.6 17 11M7 17.4 17 13"/></svg>
-          </span>
-          <h3>Machine Learning</h3>
-          <ul class="skill-tags">
-            <li>Machine Learning</li><li>Deep Learning</li><li>Computer Vision</li>
+      <div class="skills">
+        <div class="sk-row reveal">
+          <p class="sk-cat">Languages</p>
+          <ul class="sk-tags">
+            <li>Python</li><li>C++</li><li>JavaScript</li>
           </ul>
-        </article>
-
-        <article class="skill reveal">
-          <span class="skill-ic" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8 8 0 0 1-11.4 7.2L4 20l1.3-4.5A8 8 0 1 1 21 11.5Z"/><path d="M12 8.5v4M10 10.5h4"/></svg>
-          </span>
-          <h3>LLMs &amp; RAG</h3>
-          <ul class="skill-tags">
-            <li>LLMs</li><li>RAG</li><li>Generative AI</li>
+        </div>
+        <div class="sk-row reveal">
+          <p class="sk-cat">Machine Learning &amp; AI</p>
+          <ul class="sk-tags">
+            <li>Deep Learning</li><li>Computer Vision</li><li>Fine-Tuning LLMs</li>
+            <li>Auto-Encoders</li><li>RAG</li>
           </ul>
-        </article>
-
-        <article class="skill reveal">
-          <span class="skill-ic" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12"/></svg>
-          </span>
-          <h3>Programming</h3>
-          <ul class="skill-tags">
-            <li>Python</li><li>C++</li>
+        </div>
+        <div class="sk-row reveal">
+          <p class="sk-cat">Systems &amp; Software</p>
+          <ul class="sk-tags">
+            <li>Data Structures &amp; Algorithms</li><li>Systems Design</li>
           </ul>
-        </article>
-
-        <article class="skill reveal">
-          <span class="skill-ic" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg>
-          </span>
-          <h3>Languages</h3>
-          <ul class="skill-tags">
-            <li>English · Proficient</li><li>Japanese · N3</li><li>Chinese · HSK3</li>
+        </div>
+        <div class="sk-row reveal">
+          <p class="sk-cat">Tools &amp; Frameworks</p>
+          <ul class="sk-tags">
+            <li>PyTorch</li><li>Git</li><li>Docker</li><li>UNIX</li>
           </ul>
-        </article>
+        </div>
+        <div class="sk-row reveal">
+          <p class="sk-cat">Spoken Languages</p>
+          <ul class="sk-tags">
+            <li>English · Native</li><li>日本語 · N4</li><li>中文 · HSK-2</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -283,16 +318,21 @@
         <h2 class="contact-h">Have something<br/><em>worth building?</em></h2>
         <p class="contact-sub">Internships, research collaborations, or a side project — I'd love to hear about it.</p>
         <div class="contact-actions">
-          <a class="btn btn-dark" href="mailto:hello@dhruv.dev">
+          <a class="btn btn-accent" href="mailto:onidemorng@gmail.com">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg>
             Email me
           </a>
-          <a class="btn btn-dark" href="https://github.com/demo-hates-rng" target="_blank" rel="noopener noreferrer">
+          <a class="btn btn-ghost" href="https://github.com/demohatesrng1" target="_blank" rel="noopener noreferrer">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.91 0 1.38-.01 2.49-.01 2.83 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
             GitHub
           </a>
         </div>
-      
+        <div>
+          <button class="chip" id="copyEmail" data-email="onidemorng@gmail.com" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            <span class="chip-label">onidemorng@gmail.com</span>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -300,6 +340,10 @@
   <!-- ============================ FOOTER ============================ -->
   <footer class="footer">
     <div class="wrap footer-inner">
+      <a href="#home" class="footer-logo">
+        <span class="logo-mark">◆</span> Dhruv  <span class="kana" lang="ja">ドルブ</span>
+      </a>
+      <p class="muted">© <span id="year">2026</span> </p>
       <a href="#home" class="footer-top">Back to top
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
       </a>
