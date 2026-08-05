@@ -1,30 +1,33 @@
 /* =========================================================
    Dhruv — Portfolio
    Type system: Inter Tight (display) + Inter (text) + JetBrains Mono (labels)
-   Palette: near-black canvas · warm off-white ink · one vermillion accent
+   Palette: warm near-black canvas · warm off-white ink · one electric lime accent
    ========================================================= */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* ---------- canvas ---------- */
-  --bg:        #0a0a0c;
-  --bg-alt:    #0c0c0f;
-  --surface:   #121216;
-  --surface-2: #16161c;
+  /* ---------- canvas ----------
+     Not pure black + pure grey. The whole neutral ramp is nudged a few
+     degrees toward the lime so ink and canvas belong to one family. */
+  --bg:        #0b0b0a;
+  --bg-alt:    #0e0e0c;
+  --surface:   #151513;
+  --surface-2: #1d1d1a;
 
-  /* ---------- ink ---------- */
-  --ink:       #ededf1;   /* primary   */
-  --ink-2:     #a2a2ad;   /* secondary */
-  --ink-3:     #6b6b76;   /* labels    */
+  /* ---------- ink: warm, and bright enough to read ---------- */
+  --ink:       #f4f4ea;   /* primary   — 17.8:1 */
+  --ink-2:     #b9b9ab;   /* secondary —  9.9:1 (was 7.8) */
+  --ink-3:     #8b8b7f;   /* labels    —  5.7:1 (was 3.8 — below AA) */
 
-  --line:      rgba(255,255,255,0.09);
-  --line-soft: rgba(255,255,255,0.055);
-  --line-hi:   rgba(255,255,255,0.16);
+  /* lines are warm-white, never grey */
+  --line:      rgba(240,244,220,0.11);
+  --line-soft: rgba(240,244,220,0.065);
+  --line-hi:   rgba(240,244,220,0.22);
 
   /* ---------- electric accent ---------- */
   --accent:      #c6f24e;
-  --accent-ink:  #0a0a0c;
+  --accent-ink:  #0b0b0a;
   --accent-dim:  rgba(198,242,78,0.14);
   --accent-line: rgba(198,242,78,0.40);
   --accent-glow: rgba(198,242,78,0.35);
@@ -33,7 +36,7 @@
   --shadow-lg:
     0 2px 4px rgba(0,0,0,0.5),
     0 40px 90px -40px rgba(0,0,0,0.9);
-  --hi: inset 0 1px 0 rgba(255,255,255,0.05);
+  --hi: inset 0 1px 0 rgba(240,244,220,0.055);
 
   /* =======================================================
      TYPE SYSTEM
@@ -132,13 +135,44 @@ h1, h2, h3, h4 {
 }
 
 /* =========================================================
+   HAIRLINES
+   A flat grey rule across black reads as a scar. Every divider
+   on this page is instead lit at the left edge and fades out to
+   the right — so it reads as light catching an edge.
+   ========================================================= */
+.projects, .edu, .skills, .section.alt { position: relative; }
+
+.projects::before, .edu::before, .skills::before,
+.project::after,   .edu-row::after, .sk-row::after,
+.section.alt::before, .section.alt::after {
+  content: '';
+  position: absolute; left: 0; right: 0; height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    var(--accent-line) 0%,
+    var(--line)        14%,
+    var(--line)        58%,
+    rgba(240,244,220,0.015) 100%);
+}
+.projects::before, .edu::before, .skills::before { top: 0; }
+.project::after, .edu-row::after, .sk-row::after { bottom: 0; }
+
+/* section seams sit full-bleed, so they fade from both ends inward */
+.section.alt::before, .section.alt::after {
+  background: linear-gradient(90deg,
+    transparent 0%, var(--line) 22%, var(--line) 78%, transparent 100%);
+}
+.section.alt::before { top: 0; }
+.section.alt::after  { bottom: 0; }
+
+/* =========================================================
    FIXED BACKGROUND
    ========================================================= */
 .bg-grid {
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
   background-image:
-    linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px);
+    linear-gradient(rgba(240,244,220,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240,244,220,0.03) 1px, transparent 1px);
   background-size: 68px 68px;
   background-position: center top;
   -webkit-mask-image: radial-gradient(120% 80% at 50% 0%, #000 0%, rgba(0,0,0,0.5) 45%, transparent 78%);
@@ -161,7 +195,7 @@ h1, h2, h3, h4 {
   transition: background .35s var(--ease), border-color .35s var(--ease);
 }
 .nav.scrolled {
-  background: rgba(10,10,12,0.66);
+  background: rgba(11,11,10,0.68);
   backdrop-filter: blur(18px) saturate(1.4);
   -webkit-backdrop-filter: blur(18px) saturate(1.4);
   border-bottom-color: var(--line-soft);
@@ -176,9 +210,6 @@ h1, h2, h3, h4 {
   font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.025em;
   color: var(--ink);
 }
-.logo-mark { color: var(--accent); display: inline-block; font-size: 0.65em; animation: spin 20s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
-
 .nav-links { display: flex; gap: 2px; }
 .nav-links a {
   position: relative;
@@ -219,7 +250,7 @@ h1, h2, h3, h4 {
 /* mobile menu */
 .mobile-menu {
   position: fixed; inset: 0; z-index: 99;
-  background: rgba(8,8,10,0.94);
+  background: rgba(9,9,8,0.95);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
   display: flex; align-items: center; justify-content: center;
@@ -278,10 +309,13 @@ h1, h2, h3, h4 {
 .tag, .sk-tags li {
   font-size: var(--t-fine); color: var(--ink-2);
   letter-spacing: 0.02em;
-  padding: 4px 11px; border-radius: 999px;
-  background: rgba(255,255,255,0.035);
+  padding: 5px 12px; border-radius: 999px;
+  /* lit from above, so the pill has an edge instead of being a grey blob */
+  background: linear-gradient(180deg, rgba(240,244,220,0.062), rgba(240,244,220,0.022));
   border: 1px solid var(--line-soft);
+  box-shadow: inset 0 1px 0 rgba(240,244,220,0.05);
   white-space: nowrap;
+  transition: color .3s ease, border-color .3s ease, background .3s ease;
 }
 
 /* metric chips — the numbers do the talking */
@@ -373,7 +407,11 @@ h1, h2, h3, h4 {
    SECTION SCAFFOLD
    ========================================================= */
 .section { padding: 104px 0; position: relative; }
-.section.alt { background: var(--bg-alt); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+.section.alt {
+  background:
+    radial-gradient(90% 60% at 50% 0%, rgba(198,242,78,0.028), transparent 70%),
+    var(--bg-alt);
+}
 
 .section-head { max-width: 680px; margin-bottom: 56px; }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
@@ -401,13 +439,11 @@ h1, h2, h3, h4 {
 /* =========================================================
    PROJECTS
    ========================================================= */
-.projects { border-top: 1px solid var(--line); }
 .project {
   display: grid;
   grid-template-columns: 64px 1fr;
   gap: 30px;
   padding: 40px 20px 42px;
-  border-bottom: 1px solid var(--line);
   position: relative;
   border-radius: 18px;
   transition: background .4s var(--ease), padding .4s var(--ease);
@@ -420,7 +456,7 @@ h1, h2, h3, h4 {
   box-shadow: 0 0 16px var(--accent-glow);
 }
 .project:hover {
-  background: linear-gradient(90deg, var(--surface), rgba(18,18,22,0));
+  background: linear-gradient(90deg, var(--surface), rgba(21,21,19,0));
   padding-left: 30px; padding-right: 30px;
 }
 .project:hover::before { transform: scaleY(1); }
@@ -482,11 +518,10 @@ h1, h2, h3, h4 {
 /* =========================================================
    EDUCATION
    ========================================================= */
-.edu { border-top: 1px solid var(--line); }
 .edu-row {
   display: grid; grid-template-columns: 168px 1fr 132px; gap: 30px;
   padding: 30px 8px;
-  border-bottom: 1px solid var(--line);
+  position: relative;
   align-items: start;
   transition: padding .4s var(--ease), background .3s ease;
   border-radius: 14px;
@@ -510,12 +545,11 @@ h1, h2, h3, h4 {
 /* =========================================================
    SKILLS — hairline rows, same rhythm as education
    ========================================================= */
-.skills { border-top: 1px solid var(--line); }
 .sk-row {
   display: grid; grid-template-columns: 220px 1fr; gap: 30px;
   align-items: baseline;
   padding: 24px 8px;
-  border-bottom: 1px solid var(--line);
+  position: relative;
   border-radius: 14px;
   transition: padding .4s var(--ease), background .3s ease;
 }
@@ -526,6 +560,8 @@ h1, h2, h3, h4 {
 }
 .sk-row:hover .sk-cat { color: var(--accent); }
 .sk-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.sk-row:hover .sk-tags li,
+.project:hover .tag { color: var(--ink); border-color: var(--line-hi); }
 
 /* =========================================================
    CONTACT
@@ -548,7 +584,7 @@ h1, h2, h3, h4 {
   font-size: var(--t-micro); color: var(--ink-2); text-transform: uppercase;
   padding: 7px 16px; margin-bottom: 26px;
   border: 1px solid var(--line-soft); border-radius: 999px;
-  background: rgba(255,255,255,0.02);
+  background: rgba(240,244,220,0.022);
 }
 .status .dot::after { animation: none; }
 .contact-h {
@@ -565,7 +601,7 @@ h1, h2, h3, h4 {
   font-family: var(--mono); font-size: var(--t-fine); letter-spacing: 0.01em;
   color: var(--ink-2);
   padding: 9px 16px; border-radius: 999px;
-  border: 1px solid var(--line-soft); background: rgba(255,255,255,0.02);
+  border: 1px solid var(--line-soft); background: rgba(240,244,220,0.022);
   transition: color .25s ease, border-color .25s ease, background .25s ease;
 }
 .chip:hover { color: var(--ink); border-color: var(--line-hi); background: var(--surface-2); }
@@ -574,7 +610,12 @@ h1, h2, h3, h4 {
 /* =========================================================
    FOOTER
    ========================================================= */
-.footer { padding: 36px 0 46px; border-top: 1px solid var(--line-soft); }
+.footer { padding: 36px 0 46px; position: relative; }
+.footer::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%, var(--line) 22%, var(--line) 78%, transparent 100%);
+}
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
 .footer-logo {
   font-family: var(--display); font-weight: 600; font-size: var(--t-body);
