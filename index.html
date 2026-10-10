@@ -1,354 +1,258 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dhruv Dabas (ドルブ) — M.S. Computer Science student at Waseda University, Tokyo. On-device AI, neural video compression, deep learning, LLMs and computer vision." />
-  <meta name="theme-color" content="#0a0a0c" />
-  <title>Dhruv Dabas ドルブ — Machine Learning Engineer</title>
-
-  <!-- inline favicon: D monogram on a dark tile -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0b0a'/%3E%3Cpath fill='%23c6f24e' fill-rule='evenodd' d='M9 7h6.5a9 9 0 010 18H9V7zm4.4 3.9v10.2h2.1a5.1 5.1 0 000-10.2h-2.1z'/%3E%3C/svg%3E" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Dhruv Dabas</title>
+  <meta name="description" content="Dhruv Dabas (ドルブ) — master's student at Waseda University, Katto Laboratory. Image and video coding for machines, neural video compression (DCVC), ROI coding, diffusion models and computer vision." />
+  <meta name="theme-color" content="#3b3b3b" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="alternate" hreflang="en" href="https://demohatesrng1.github.io/demohatesrng1/" />
+  <link rel="alternate" hreflang="ja" href="https://demohatesrng1.github.io/demohatesrng1/ja/" />
+  <link rel="alternate" hreflang="x-default" href="https://demohatesrng1.github.io/demohatesrng1/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- only downloaded where Yu Mincho / Hiragino Mincho aren't installed -->
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <script>document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js');</script>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <!-- fixed background: grid + accent bloom -->
-  <div class="bg-grid" aria-hidden="true"></div>
-  <div class="bg-glow" aria-hidden="true"></div>
-
-  <!-- ============================ NAV ============================ -->
-  <nav class="nav" id="nav">
-    <div class="wrap nav-inner">
-      <a href="#home" class="nav-logo">
-        <span class="logo-text">Dhruv</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#research">Focus</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-      </ul>
-      <div class="nav-right">
-        <a href="proposal.html" target="_blank" rel="noopener" class="nav-heart" title="a little surprise 💌" aria-label="A little surprise">♡</a>
-        <a href="#contact" class="nav-cta">
-          <span>Let's talk</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
-        <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-          <span></span><span></span>
-        </button>
+  <div class="page-shell">
+    <header class="topbar enter" style="--i:0">
+      <div class="topbar__identity">
+        <p class="topbar__name"><a href="./">Dhruv Dabas</a></p>
       </div>
-    </div>
-  </nav>
 
-  <!-- mobile menu overlay -->
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <ul>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#research">Focus</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="proposal.html" target="_blank" rel="noopener" class="mm-heart">♡ A little surprise 💌</a></li>
-      <li><a href="#contact" class="mm-cta">Let's talk</a></li>
-    </ul>
+      <div class="topbar__right">
+        <div class="topbar__tools">
+          <div class="topbar__links" aria-label="External links">
+            <a href="https://github.com/demohatesrng1" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <svg class="topbar__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.32 6.84 9.66.5.1.68-.22.68-.49 0-.24-.01-1.03-.01-1.87-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.86.09-.67.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.09 0-1.13.39-2.05 1.03-2.78-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.06A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.12 2.51.36 1.91-1.34 2.75-1.06 2.75-1.06.55 1.42.2 2.47.1 2.73.64.73 1.03 1.65 1.03 2.78 0 3.96-2.33 4.82-4.56 5.08.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.24 10.24 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"/></svg>
+            </a>
+            <a href="mailto:onidemorng@gmail.com" aria-label="Email">
+              <svg class="topbar__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+            </a>
+          </div>
+          <nav class="lang" aria-label="Language">
+            <a href="./" hreflang="en" lang="en" aria-current="page">EN</a>
+            <a href="ja/" hreflang="ja" lang="ja">日本語</a>
+          </nav>
+        </div>
+
+        <nav class="topbar__nav" aria-label="Primary">
+          <a href="#research">Research</a>
+          <a href="#education">Education</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+          <a href="cv.html">CV</a>
+          <a href="proposal.html" class="nav-secret" title="a little surprise">Secret</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero hero--home enter" id="about" style="--i:1" aria-label="About">
+        <div class="hero__text">
+          <h1 class="hero__name">Dhruv Dabas<span class="hero__kana" lang="ja">ドルブ・ダバス</span></h1>
+          <p class="hero__role">Master’s student · Waseda University · Katto Laboratory</p>
+          <p class="hero__lead">
+            I work on image and video information processing — neural video compression (DCVC),
+            image and video coding for machines, region-of-interest coding, diffusion models and
+            computer vision.
+          </p>
+          <p class="hero__lead">
+            The question I keep coming back to: how small can an image or a video get while the
+            vision models that use it still see what matters?
+          </p>
+          <div class="hero__meta-links">
+            <a href="cv.html">CV</a>
+            <a href="#research">Research</a>
+            <a href="https://www.katto.comm.waseda.ac.jp/wordpress/" target="_blank" rel="noreferrer">Katto Laboratory</a>
+            <a href="https://github.com/demohatesrng1" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="mailto:onidemorng@gmail.com">Email</a>
+          </div>
+        </div>
+        <figure class="hero__portrait">
+          <img src="assets/portrait.jpg" alt="Dhruv Dabas sitting on the gravel near the summit of Mt Fuji, holding a walking stick" width="640" height="800" />
+          <figcaption>Mt Fuji</figcaption>
+        </figure>
+      </section>
+
+      <section class="card enter" id="research" style="--i:2">
+        <div class="section-heading">
+          <h2>Research</h2>
+          <p class="section-heading__note">Katto Laboratory, Waseda University</p>
+        </div>
+        <p class="intro">
+          At Katto Laboratory I work on image and video information processing. Papers and project
+          pages will be listed here as they are published.
+        </p>
+        <div class="areas">
+          <article class="area area--lead">
+            <h3>Image and video coding for machines <span class="status">ICM / VCM</span></h3>
+            <p>Compressing images and video for the vision models that analyse them, not only for human eyes.</p>
+          </article>
+          <article class="area">
+            <h3>Neural video compression <span class="status">DCVC</span></h3>
+            <p>Learned video codecs, especially the DCVC family, and their rate–distortion behaviour.</p>
+          </article>
+          <article class="area">
+            <h3>Region-of-interest coding <span class="status">ROI</span></h3>
+            <p>Spending bits on the regions a task actually depends on.</p>
+          </article>
+          <article class="area">
+            <h3>Diffusion models</h3>
+            <p>Generative diffusion models for images and video.</p>
+          </article>
+          <article class="area">
+            <h3>Computer vision</h3>
+            <p>Detection and tracking — and how well they hold up on compressed video.</p>
+          </article>
+        </div>
+        <div class="rows rows--papers">
+          <!-- Copy this block for each paper / research project:
+          <article class="row">
+            <p class="row__meta">2026</p>
+            <div class="row__body">
+              <h3><a href="LINK">Title of the work</a></h3>
+              <p><strong>Dhruv Dabas</strong>, Co-author, Jiro Katto</p>
+              <p><em>Venue 2027</em> · <span class="status">Under review</span></p>
+              <p class="row__sub">One-sentence summary.</p>
+            </div>
+          </article>
+          -->
+        </div>
+      </section>
+
+      <section class="card enter" id="education" style="--i:3">
+        <div class="section-heading">
+          <h2>Education</h2>
+        </div>
+        <div class="rows">
+          <article class="row">
+            <p class="row__meta">Apr 2026 –<br />2028 (expected)</p>
+            <div class="row__body">
+              <h3>Waseda University</h3>
+              <p>
+                Master of Engineering in Computer Science and Communications Engineering,
+                Graduate School of Fundamental Science and Engineering.
+                Member of <a href="https://www.katto.comm.waseda.ac.jp/wordpress/" target="_blank" rel="noreferrer">Katto Laboratory</a>.
+              </p>
+              <p class="row__sub">GPA 3.8 / 4.0</p>
+            </div>
+          </article>
+          <article class="row">
+            <p class="row__meta">Jun 2022 –<br />Jun 2025</p>
+            <div class="row__body">
+              <h3>University of Delhi</h3>
+              <p>B.Sc. (Hons.) in Computer Science, Deen Dayal Upadhyaya College, New Delhi.</p>
+              <p class="row__sub">GPA 7.6 / 10</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="card enter" id="projects" style="--i:4">
+        <div class="section-heading">
+          <h2>Projects</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <p class="project-card__meta">Voice assistant · C++ / Qt6 · macOS</p>
+            <h3>Mimi</h3>
+            <p>
+              A privacy-first Japanese voice assistant that runs entirely on a Mac. Speech
+              recognition, a local LLM and speech synthesis all stay on the device — nothing is
+              sent to the cloud.
+            </p>
+            <p>
+              I rewrote the Python prototype in C++/Qt6 so Whisper could run on the Metal GPU, and
+              built an always-listening audio path around a lock-free ring buffer fed from the
+              CoreAudio real-time thread, with voice-activity detection, wake-word spotting and
+              transcription running in parallel.
+            </p>
+            <p class="project-card__figures">
+              <span>~17.6K<small>lines of C++</small></span>
+              <span>13–15×<small>real-time</small></span>
+              <span>12+<small>voice actions</small></span>
+            </p>
+          </article>
+
+          <article class="project-card">
+            <p class="project-card__meta">Neural video codecs · CUDA · PyTorch</p>
+            <h3>Neural video compression, measured downstream</h3>
+            <p>
+              Deployed and benchmarked DCVC-RT, a CVPR 2025 real-time neural video codec, on a
+              CUDA server — building its custom C++/CUDA extensions and evaluating rate–distortion
+              at four quantization levels on 4K and lower-resolution video.
+            </p>
+            <p>
+              I then ran YOLOv8 multi-object tracking on the decoded frames to measure how far video
+              can be compressed before downstream computer vision starts to break.
+            </p>
+            <p class="project-card__figures">
+              <span>38–53&nbsp;dB<small>PSNR</small></span>
+              <span>0.0008–0.011<small>bpp</small></span>
+              <span>4K<small>max resolution</small></span>
+            </p>
+          </article>
+
+          <article class="project-card project-card--wide">
+            <p class="project-card__meta">Game · C++</p>
+            <h3>Poker</h3>
+            <p>The game of poker, built from scratch in C++.</p>
+            <a class="project-card__link" href="https://github.com/demohatesrng1/Poker" target="_blank" rel="noreferrer">Repository</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="card enter" id="skills" style="--i:5">
+        <div class="section-heading">
+          <h2>Skills</h2>
+        </div>
+        <div class="rows">
+          <div class="row row--skills">
+            <p class="row__meta">Programming</p>
+            <div class="row__body"><p>Python, C++, JavaScript, TypeScript</p></div>
+          </div>
+          <div class="row row--skills">
+            <p class="row__meta">Machine learning</p>
+            <div class="row__body"><p>Deep learning, computer vision (OpenCV, YOLO), reinforcement learning, LLM fine-tuning, RAG</p></div>
+          </div>
+          <div class="row row--skills">
+            <p class="row__meta">Tools</p>
+            <div class="row__body"><p>PyTorch, CUDA, Qt, Git, Docker, UNIX / Linux</p></div>
+          </div>
+          <div class="row row--skills">
+            <p class="row__meta">Languages</p>
+            <div class="row__body"><p>English (native), Japanese (JLPT N3), Chinese (HSK 3)</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card enter" id="contact" style="--i:6">
+        <div class="section-heading">
+          <h2>Contact</h2>
+        </div>
+        <p>Email is the best way to reach me.</p>
+        <div class="contact-line">
+          <div class="hero__links">
+            <a href="mailto:onidemorng@gmail.com">onidemorng@gmail.com</a>
+            <a href="https://github.com/demohatesrng1" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="cv.html">CV (PDF)</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Dhruv Dabas</p>
+      <p>If it doesn’t challenge you, it doesn’t change you.</p>
+    </footer>
   </div>
-
-  <!-- ============================ HERO ============================ -->
-  <header class="hero" id="home">
-    <div class="wrap hero-inner">
-      <p class="hero-eyebrow" data-rise style="--d:.05s">
-        <span class="dot" aria-hidden="true"></span>
-        Dhruv Dabas <span class="kana" lang="ja">ドルブ</span>
-        <span class="sep" aria-hidden="true">/</span>
-        Open to internships &amp; research
-      </p>
-
-      <h1 class="hero-h" data-rise style="--d:.13s">
-        Machine learning<br class="br-lg" />
-        that runs <em>on the<br class="br-lg" />
-        metal</em>.
-      </h1>
-
-      <p class="hero-sub" data-rise style="--d:.22s">
-        M.S. student in Computer Science at Waseda University, Tokyo. I build
-        systems where the model is only half the problem — on-device speech and
-        LLM inference, neural video codecs, and the C++/CUDA plumbing that makes
-        them fast enough to actually use.
-      </p>
-
-      <div class="hero-actions" data-rise style="--d:.3s">
-        <a class="btn btn-accent" href="#projects">
-          View work
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-        </a>
-        <a class="btn btn-ghost" href="#contact">Get in touch</a>
-      </div>
-
-      <dl class="hero-stats" data-rise style="--d:.38s">
-        <div class="stat">
-          <dt>Focus</dt>
-          <dd>On-device ML</dd>
-        </div>
-        <div class="stat">
-          <dt>Based in</dt>
-          <dd>Tokyo, Japan</dd>
-        </div>
-        <div class="stat">
-          <dt>Now</dt>
-          <dd>Waseda University</dd>
-        </div>
-        <div class="stat">
-          <dt>Languages</dt>
-          <dd>EN · JA · ZH</dd>
-        </div>
-      </dl>
-    </div>
-  </header>
-
-  <!-- ============================ PROJECTS ============================ -->
-  <section class="section" id="projects">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow reveal"><span class="ix">01</span> Projects</p>
-        <h2 class="section-h reveal">Things I've <em>built</em>.</h2>
-        <p class="section-sub reveal">Two systems projects, both measured rather than described.</p>
-      </div>
-
-      <div class="projects">
-
-        <article class="project reveal">
-          <span class="project-idx" aria-hidden="true">01</span>
-          <div class="project-main">
-            <div class="project-topline">
-              <h3 class="project-h">Mimi</h3>
-              <p class="project-stack">On-device Japanese AI voice assistant · C++/Qt6 · macOS</p>
-            </div>
-
-            <p class="project-desc">
-              A fully on-device Japanese voice assistant for macOS, ported from a Python
-              prototype to ~17.6K lines of C++/Qt6 so Whisper inference could run on the
-              Metal GPU — 13–15× realtime transcription with speech recognition, the LLM,
-              and synthesis all running locally. Zero cloud dependency.
-            </p>
-            <p class="project-desc">
-              The always-listening path is a lock-free 30-second ring buffer fed straight
-              from the CoreAudio realtime thread, with voice-activity detection, wake-word
-              spotting, and transcription running in parallel — no dead-air windows, no lock
-              contention mid-conversation.
-            </p>
-
-            <div class="metrics">
-              <div class="metric"><span class="metric-v">~17.6K</span><span class="metric-k">Lines of C++</span></div>
-              <div class="metric"><span class="metric-v">13–15×</span><span class="metric-k">Realtime STT</span></div>
-              <div class="metric"><span class="metric-v">30s</span><span class="metric-k">Lock-free buffer</span></div>
-              <div class="metric"><span class="metric-v">0</span><span class="metric-k">Cloud calls</span></div>
-            </div>
-
-            <div class="project-tags">
-              <span class="tag">C++</span><span class="tag">Qt6</span><span class="tag">Whisper</span>
-              <span class="tag">Metal</span><span class="tag">CoreAudio</span><span class="tag">LLMs</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project reveal">
-          <span class="project-idx" aria-hidden="true">02</span>
-          <div class="project-main">
-            <div class="project-topline">
-              <h3 class="project-h">Neural Video Compression Pipeline</h3>
-              <p class="project-stack">DCVC-RT + YOLOv8 · CUDA · PyTorch</p>
-            </div>
-
-            <p class="project-desc">
-              Deployed and benchmarked DCVC-RT — a CVPR 2025 real-time neural video codec —
-              on a CUDA GPU server, building the custom C++/CUDA extensions and evaluating
-              rate–distortion performance across four quantization levels on 4K and
-              lower-resolution video.
-            </p>
-            <p class="project-desc">
-              Then extended the evaluation pipeline in Python/PyTorch to run YOLOv8
-              multi-object tracking over the decoded frames, producing per-frame tracking
-              data and annotated video — quantifying how far you can compress before
-              downstream computer vision starts to break.
-            </p>
-
-            <div class="metrics">
-              <div class="metric"><span class="metric-v">38–53 dB</span><span class="metric-k">PSNR</span></div>
-              <div class="metric"><span class="metric-v">0.0008–0.011</span><span class="metric-k">bpp</span></div>
-              <div class="metric"><span class="metric-v">4</span><span class="metric-k">Quantization levels</span></div>
-              <div class="metric"><span class="metric-v">4K</span><span class="metric-k">Max resolution</span></div>
-            </div>
-
-            <div class="project-tags">
-              <span class="tag">CUDA</span><span class="tag">C++</span><span class="tag">PyTorch</span>
-              <span class="tag">YOLOv8</span><span class="tag">Video Codecs</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ FOCUS ============================ -->
-  <section class="section alt" id="research">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow reveal"><span class="ix">02</span> Focus</p>
-        <h2 class="section-h reveal">What I'm working <em>toward</em>.</h2>
-      </div>
-
-      <div class="r-grid">
-        <article class="r-card reveal">
-          <span class="r-tag">FA—01</span>
-          <h3>On-Device &amp; Efficient Inference</h3>
-          <p>Getting large models onto local hardware — quantization, GPU kernels, and low-latency audio and video pipelines.</p>
-          <span class="r-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </article>
-        <article class="r-card reveal">
-          <span class="r-tag">FA—02</span>
-          <h3>Computer Vision</h3>
-          <p>Detection, tracking, and representation learning — and how much perception survives lossy neural compression.</p>
-          <span class="r-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </article>
-        <article class="r-card reveal">
-          <span class="r-tag">FA—03</span>
-          <h3>Large Language Models</h3>
-          <p>Fine-tuning, auto-encoders, and building interfaces on top of foundation models that hold up outside a demo.</p>
-          <span class="r-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </article>
-        <article class="r-card reveal">
-          <span class="r-tag">FA—04</span>
-          <h3>Retrieval-Augmented Generation</h3>
-          <p>Grounding generation in real knowledge — retrieval, ranking, and synthesis that stays faithful to its sources.</p>
-          <span class="r-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ EDUCATION ============================ -->
-  <section class="section" id="education">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow reveal"><span class="ix">03</span> Education</p>
-        <h2 class="section-h reveal">Where I've <em>studied</em>.</h2>
-      </div>
-
-      <div class="edu">
-        <div class="edu-row reveal">
-          <span class="edu-y">Apr 2026 — Apr 2028</span>
-          <div class="edu-c">
-            <h3>M.S., Computer Science</h3>
-            <p>Waseda University &nbsp;·&nbsp; Tokyo, Japan</p>
-            <p class="edu-focus">Graduate School of Fundamental Science &amp; Engineering</p>
-          </div>
-          <span class="edu-tag is-now">Current</span>
-        </div>
-        <div class="edu-row reveal">
-          <span class="edu-y">Jun 2022 — Jun 2025</span>
-          <div class="edu-c">
-            <h3>B.Sc. (Hons.), Computer Science</h3>
-            <p>University of Delhi &nbsp;·&nbsp; New Delhi, India</p>
-            <p class="edu-focus">Deen Dayal Upadhyaya College</p>
-          </div>
-          <span class="edu-tag">Undergraduate</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ SKILLS ============================ -->
-  <section class="section alt" id="skills">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow reveal"><span class="ix">04</span> Skills</p>
-        <h2 class="section-h reveal">What I work <em>with</em>.</h2>
-      </div>
-
-      <div class="skills">
-        <div class="sk-row reveal">
-          <p class="sk-cat">Languages</p>
-          <ul class="sk-tags">
-            <li>Python</li><li>C++</li><li>JavaScript</li>
-          </ul>
-        </div>
-        <div class="sk-row reveal">
-          <p class="sk-cat">Machine Learning &amp; AI</p>
-          <ul class="sk-tags">
-            <li>Deep Learning</li><li>Computer Vision</li><li>Fine-Tuning LLMs</li>
-            <li>Auto-Encoders</li><li>RAG</li>
-          </ul>
-        </div>
-        <div class="sk-row reveal">
-          <p class="sk-cat">Systems &amp; Software</p>
-          <ul class="sk-tags">
-            <li>Data Structures &amp; Algorithms</li><li>Systems Design</li>
-          </ul>
-        </div>
-        <div class="sk-row reveal">
-          <p class="sk-cat">Tools &amp; Frameworks</p>
-          <ul class="sk-tags">
-            <li>PyTorch</li><li>Git</li><li>Docker</li><li>UNIX</li>
-          </ul>
-        </div>
-        <div class="sk-row reveal">
-          <p class="sk-cat">Spoken Languages</p>
-          <ul class="sk-tags">
-            <li>English · Native</li><li>日本語 · N4</li><li>中文 · HSK-2</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ CONTACT ============================ -->
-  <section class="section contact" id="contact">
-    <div class="wrap">
-      <div class="contact-card reveal">
-        <span class="status"><i class="dot" aria-hidden="true"></i> Open to internships &amp; research</span>
-        <h2 class="contact-h">Have something<br/><em>worth building?</em></h2>
-        <p class="contact-sub">Internships, research collaborations, or a side project — I'd love to hear about it.</p>
-        <div class="contact-actions">
-          <a class="btn btn-accent" href="mailto:onidemorng@gmail.com">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg>
-            Email me
-          </a>
-          <a class="btn btn-ghost" href="https://github.com/demohatesrng1" target="_blank" rel="noopener noreferrer">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.91 0 1.38-.01 2.49-.01 2.83 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
-            GitHub
-          </a>
-        </div>
-        <div>
-          <button class="chip" id="copyEmail" data-email="onidemorng@gmail.com" type="button">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
-            <span class="chip-label">onidemorng@gmail.com</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ FOOTER ============================ -->
-  <footer class="footer">
-    <div class="wrap footer-inner">
-      <a href="#home" class="footer-logo">
-        Dhruv <span class="kana" lang="ja">ドルブ</span>
-      </a>
-      <p class="muted">© <span id="year">2026</span> </p>
-      <a href="#home" class="footer-top">Back to top
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-      </a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
