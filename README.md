@@ -1,10 +1,4 @@
-<a href="https://demohatesrng1.github.io/demohatesrng1/">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/github/header-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/github/header-light.svg">
-    <img alt="DEMO" src="assets/github/header-light.svg" width="100%">
-  </picture>
-</a>
+<a href="https://demohatesrng1.github.io/demohatesrng1/"><img alt="Demo" src="assets/github/header-dark.svg" width="100%"></a>
 
 <p align="center">
   <a href="https://demohatesrng1.github.io/demohatesrng1/">website</a> &nbsp;·&nbsp;
@@ -16,11 +10,7 @@
 <br>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/github/stack-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/github/stack-light.svg">
-    <img alt="Python, C++, PyTorch, CUDA, OpenCV" src="assets/github/stack-light.svg" width="308">
-  </picture>
+  <img alt="Python, C++, PyTorch, CUDA" src="assets/github/stack-dark.svg" width="325">
 </p>
 
 <p align="center"><em>If it doesn’t challenge you, it doesn’t change you.</em></p>
