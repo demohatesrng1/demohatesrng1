@@ -30,7 +30,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/github/stack-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/github/stack-light.svg">
-    <img alt="Python, C++, PyTorch, CUDA, OpenCV, JavaScript, TypeScript, Qt, Docker, Git, Linux" src="assets/github/stack-light.svg" width="692">
+    <img alt="Python, C++, PyTorch, CUDA, OpenCV, JavaScript, TypeScript, Docker, Git, Linux" src="assets/github/stack-light.svg" width="628">
   </picture>
 </p>
 
