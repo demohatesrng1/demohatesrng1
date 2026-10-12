@@ -2,9 +2,7 @@
 
 <p align="center">
   <a href="https://demohatesrng1.github.io/demohatesrng1/">website</a> &nbsp;·&nbsp;
-  <a href="https://demohatesrng1.github.io/demohatesrng1/ja/">日本語</a> &nbsp;·&nbsp;
-  <a href="https://demohatesrng1.github.io/demohatesrng1/cv.html">cv</a> &nbsp;·&nbsp;
-  <a href="mailto:onidemorng@gmail.com">say hi</a>
+  <a href="https://demohatesrng1.github.io/demohatesrng1/ja/">日本語</a>
 </p>
 
 <br>
